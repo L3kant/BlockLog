@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.68561872909699" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blocklogdyn.FXMLDocumentController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TextArea fx:id="ta_Message" layoutX="18.0" layoutY="18.0" prefHeight="363.0" prefWidth="372.0" />
+         </children></AnchorPane>
+    <AnchorPane fx:id="ap_Name" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="bt_End" layoutX="39.0" layoutY="199.0" mnemonicParsing="false" onAction="#actionBt" prefHeight="25.0" prefWidth="107.0" text="Konec" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="190.0" />
+            <Button fx:id="bt_Export" layoutX="39.0" layoutY="277.0" mnemonicParsing="false" onAction="#actionBtExport" prefHeight="25.0" prefWidth="107.0" text="Export" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="270.0" />
+            <Button fx:id="bt_Supplier" layoutX="39.0" layoutY="154.0" mnemonicParsing="false" onAction="#actionBt" prefHeight="25.0" prefWidth="107.0" text="Dodavatel" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="150.0" />
+            <Label contentDisplay="CENTER" layoutX="39.0" layoutY="30.0" text="Block Log ELIT" textAlignment="CENTER" textFill="#080808" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="bt_TimeStamp" layoutX="39.0" layoutY="235.0" mnemonicParsing="false" onAction="#actionBt" text="TimeStamp" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="230.0" />
+            <SplitMenuButton fx:id="smb_Start" layoutX="55.0" layoutY="70.0" mnemonicParsing="false" text="Start" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="70.0">
+              <items>
+                <MenuItem fx:id="mi_Start" mnemonicParsing="false" onAction="#actionBt" text="IT" />
+                <MenuItem fx:id="mi_UserReport" mnemonicParsing="false" onAction="#actionBt" text="Uživatel" />
+              </items>
+            </SplitMenuButton>
+            <SplitMenuButton fx:id="smb_Report" layoutX="54.0" layoutY="111.0" mnemonicParsing="false" text="Zpráva" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="110.0">
+              <items>
+                <MenuItem fx:id="mi_MessTerm" mnemonicParsing="false" onAction="#actionBt" text="Terminál" />
+                <MenuItem fx:id="mi_MessSMS" mnemonicParsing="false" onAction="#actionBt" text="SMS" />
+              </items>
+            </SplitMenuButton>
+            <Label fx:id="lb_Time" layoutX="79.0" layoutY="323.0" text="time" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="310.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
