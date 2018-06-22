@@ -13,6 +13,7 @@ import java.time.LocalTime;
  * @author stanislav_vo
  */
 public class Message {
+    private static boolean first = true;
     
     public static String message(String type) {
         String zprava;
@@ -25,7 +26,7 @@ public class Message {
                 type2 = "Start - Uživatel";
                 break;
             case "MenuItem[id=mi_MessTerm, styleClass=[menu-item]]":
-                type2 = "Zpráva odeslnána na terminály";
+                type2 = "Zpráva odeslána na terminály";
                 break;
             case "MenuItem[id=mi_MessSMS, styleClass=[menu-item]]":
                 type2 = "Zpráva odeslnána SMS";
@@ -34,7 +35,7 @@ public class Message {
                 type2 = "Předáno dodavateli";
                 break;
             case "Button[id=bt_End, styleClass=button]'Konec'":
-                type2 = "Blokování vyřešeno";
+                type2 = "Konec";
                 break;
             case "Button[id=bt_TimeStamp, styleClass=button]'TimeStamp'":
                 type2 = " ";
@@ -42,9 +43,14 @@ public class Message {
             default:
                 break;
         }
-        zprava = (LocalDate.now() + " " + LocalTime.now() + " " + type2 + "\n");
+        
+        if (first == true) {
+            zprava = "";
+            first = false;
+        } else {
+            zprava = "\n";
+        }
+        zprava += (LocalDate.now() + " " + LocalTime.now() + " " + type2);
         return zprava;
     }
-    
-    
 }

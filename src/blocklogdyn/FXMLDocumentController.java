@@ -9,17 +9,19 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  *
@@ -48,7 +50,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label lb_Time;
     @FXML
-    private AnchorPane ap_Name;
+    private Label lb_Name;
     @FXML
     private SplitMenuButton smb_Start;
     @FXML
@@ -63,16 +65,24 @@ public class FXMLDocumentController implements Initializable {
     public void actionBt (ActionEvent event){
         String type = String.valueOf(event.getSource());
         ta_Message.appendText(Message.message(type));
+        ta_Message.requestFocus();
     }
     
     @FXML
     public void actionBtExport (ActionEvent event) throws IOException{
         FileWriter fw = null;
+        StackPane sp = new StackPane();
+        Scene sc = new Scene(sp);
+        Stage st = new Stage();
+        st.setScene(sc);
+        
+        FileChooser filePicker = new FileChooser();
+        filePicker.getExtensionFilters().add(new FileChooser.ExtensionFilter("text file", "*.txt"));
+        File selectedFile = filePicker.showSaveDialog(st);
+        
         try {    
-            File exportTxt = new File ("BlockLog.txt");
-            fw = new FileWriter(exportTxt);
+            fw = new FileWriter(selectedFile);
             fw.write(ta_Message.getText());
-            System.out.println(ta_Message.getText());
         }
         catch (IOException e){
             System.out.println(e);
@@ -86,7 +96,6 @@ public class FXMLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-  
+        
+    }      
 }

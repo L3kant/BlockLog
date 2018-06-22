@@ -14,12 +14,12 @@
          <children>
             <TextArea fx:id="ta_Message" layoutX="18.0" layoutY="18.0" prefHeight="363.0" prefWidth="372.0" />
          </children></AnchorPane>
-    <AnchorPane fx:id="ap_Name" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
             <Button fx:id="bt_End" layoutX="39.0" layoutY="199.0" mnemonicParsing="false" onAction="#actionBt" prefHeight="25.0" prefWidth="107.0" text="Konec" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="190.0" />
             <Button fx:id="bt_Export" layoutX="39.0" layoutY="277.0" mnemonicParsing="false" onAction="#actionBtExport" prefHeight="25.0" prefWidth="107.0" text="Export" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="270.0" />
             <Button fx:id="bt_Supplier" layoutX="39.0" layoutY="154.0" mnemonicParsing="false" onAction="#actionBt" prefHeight="25.0" prefWidth="107.0" text="Dodavatel" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="150.0" />
-            <Label contentDisplay="CENTER" layoutX="39.0" layoutY="30.0" text="Block Log ELIT" textAlignment="CENTER" textFill="#080808" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="30.0">
+            <Label fx:id="lb_Name" contentDisplay="CENTER" layoutX="39.0" layoutY="30.0" text="Tracker ELIT" textAlignment="CENTER" textFill="#080808" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="30.0">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -37,7 +37,7 @@
                 <MenuItem fx:id="mi_MessSMS" mnemonicParsing="false" onAction="#actionBt" text="SMS" />
               </items>
             </SplitMenuButton>
-            <Label fx:id="lb_Time" layoutX="79.0" layoutY="323.0" text="time" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="310.0" />
+            <Label fx:id="lb_Time" layoutX="79.0" layoutY="323.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="310.0" />
          </children></AnchorPane>
   </items>
 </SplitPane>

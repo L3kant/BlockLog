@@ -6,8 +6,6 @@
 package blocklogdyn;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,7 +25,7 @@ public class BlockLogDyn extends Application {
                 
         stage.setScene(scene);
         stage.setTitle("Block Log");
-        //stage.setAlwaysOnTop(false);
+        stage.setAlwaysOnTop(false);
         stage.show();
         
     }
