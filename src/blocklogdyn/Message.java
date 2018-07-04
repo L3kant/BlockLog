@@ -18,7 +18,7 @@ public class Message {
     public static String message(String type) {
         String zprava;
         String type2 = "";
-        if (null != type)switch (type) {
+        if (null != type) switch (type) {
             case "MenuItem[id=mi_Start, styleClass=[menu-item]]":
                 type2 = "Start - IT";
                 break;

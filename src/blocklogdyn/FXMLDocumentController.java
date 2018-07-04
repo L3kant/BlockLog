@@ -71,6 +71,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void actionBtExport (ActionEvent event) throws IOException{
         FileWriter fw = null;
+                
         StackPane sp = new StackPane();
         Scene sc = new Scene(sp);
         Stage st = new Stage();
@@ -80,16 +81,22 @@ public class FXMLDocumentController implements Initializable {
         filePicker.getExtensionFilters().add(new FileChooser.ExtensionFilter("text file", "*.txt"));
         File selectedFile = filePicker.showSaveDialog(st);
         
-        try {    
-            fw = new FileWriter(selectedFile);
-            fw.write(ta_Message.getText());
-        }
-        catch (IOException e){
-            System.out.println(e);
-        } 
-        finally {
-            if (fw != null){
-                fw.close();
+        if (selectedFile != null){
+            try {    
+                fw = new FileWriter(selectedFile);
+                fw.write(ta_Message.getText());
+            }
+            catch (IOException e){
+                System.out.println(e);
+            } 
+            finally {
+                if (fw != null){
+                    fw.close();
+                }
+            }
+            if (InfoLog.info_YesNo ("InfoLog", "Vyčistit pole pro logování?\n\n")){
+                ta_Message.setText("");
+                ta_Message.requestFocus();
             }
         }
     }
