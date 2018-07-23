@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package blocklogdyn;
+package cz.l3kant.blocklog;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -23,11 +18,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-/**
- *
- * @author stanislav_vo
- */
-public class FXMLDocumentController implements Initializable {
+public class FXMLController implements Initializable {
     
     @FXML
     private MenuItem mi_Start;

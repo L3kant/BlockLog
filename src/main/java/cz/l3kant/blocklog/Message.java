@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package blocklogdyn;
+package cz.l3kant.blocklog;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+
 
 /**
  *
  * @author stanislav_vo
  */
 public class Message {
+    
     private static boolean first = true;
     
     public static String message(String type) {
@@ -55,3 +57,5 @@ public class Message {
         return zprava;
     }
 }
+
+    

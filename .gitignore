@@ -1,7 +1,4 @@
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-BlockLog.txt
+.settings/
+.project
+.classpath
+target/

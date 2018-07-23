@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package blocklogdyn;
+package cz.l3kant.blocklog;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Pos;
 import javafx.scene.control.TextField;
+import javafx.stage.WindowEvent;
 
 /**
  *
@@ -22,8 +25,7 @@ import javafx.scene.control.TextField;
  */
 public class InfoLog {
     
-
-    static boolean answer;
+ static boolean answer;
         
     public static boolean info_YesNo (String title, String message){
                
@@ -33,20 +35,25 @@ public class InfoLog {
         
         Insets insets = new Insets(20,20,5,20);
         
-        Stage st_Info = new Stage ();
+        final Stage st_Info = new Stage ();
         
         StackPane sp_Info1 = new StackPane();
         sp_Info1.getChildren().add(lb_Text);
         
+        /*nastaveni akce na "ANO"*/
         bt_Yes.setOnAction(e -> {
             answer = true;
             st_Info.close();
         });
+        
+        /*nastaveni akce na "NE"*/
         bt_No.setOnAction(e -> {
             answer = false;
             st_Info.close();
-        });
-        st_Info.setOnCloseRequest(e -> answer = false);
+        });       
+        
+        /*nastavení akce při zavření infologu*/
+        st_Info.setOnCloseRequest(e -> answer = false);       
         
         HBox hb_Info1 = new HBox(10);
         hb_Info1.setPadding(insets);
