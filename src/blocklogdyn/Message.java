@@ -29,6 +29,7 @@ public class Message {
                 type2 = "Zpráva odeslána na terminály";
                 break;
             case "MenuItem[id=mi_MessSMS, styleClass=[menu-item]]":
+                InfoLog.input_Message("SMS");                
                 type2 = "Zpráva odeslnána SMS";
                 break;   
             case "Button[id=bt_Supplier, styleClass=button]'Dodavatel'":

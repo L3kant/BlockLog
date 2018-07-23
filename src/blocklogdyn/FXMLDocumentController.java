@@ -94,11 +94,12 @@ public class FXMLDocumentController implements Initializable {
                     fw.close();
                 }
             }
-            if (InfoLog.info_YesNo ("InfoLog", "Vyčistit pole pro logování?\n\n")){
+            if (InfoLog.info_YesNo ("InfoLog", "Vyčistit pole pro logování?")){
                 ta_Message.setText("");
                 ta_Message.requestFocus();
             }
         }
+        
     }
 
     @Override
